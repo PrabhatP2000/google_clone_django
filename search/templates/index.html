@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Title block -->
+{% block title %}Google{% endblock %}
+
+{%block content %}
+<div class="container-fluid m-3 d-flex justify-content-end align-items-center">
+    <a href="#" class="pr-4 text-dark">Gmail</a>
+    <a href="#" class="pr-4 text-dark">Images</a>
+    <a href="#" class="btn btn-primary mr-3">Sign in</a>
+
+</div>
+
+<div class="container-fluid d-flex justify-content-center">
+    <img class="w-25 m-3" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+        alt="logo">
+</div>
+
+<div class="container-fluid d-flex justify-content-center">
+    <form method="POST" action="/search">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control" name="search">
+        </div>
+
+        <div class="row m-4">
+            <input class="col-md-6 btn btn-light" type="submit" value="Google Search">
+            <input class="col-md-6 btn btn-light" type="button" value="I'm Feeling Lucky">
+        </div>
+    </form>
+</div>
+
+<div class="container-fluid fixed-bottom">
+    <div class="row">
+        <div class="col-11">
+            <p style="font-size: 20px;" class="text-dark font-weight-bolder">India</p>
+        </div>
+    </div>
+</div>
+
+{%endblock %}

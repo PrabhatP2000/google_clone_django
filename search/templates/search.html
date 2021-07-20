@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Title block -->
+{% block title %}Results{% endblock %}
+
+{%block content %}
+<h1 class="bg-dark text-light">
+    Search Results
+</h1>
+
+
+{% for result in final_result %}
+<div class="container">
+    <h3 class="text-primary">
+        <a href="{{ result.1 }}">{{ result.0 }}</a>
+    </h3>
+    <h3 class="text-success">
+        {{result.1}}
+    </h3>
+    <h3>
+        {{result.2}}
+    </h3>
+</div>
+<br>
+<br>
+{% endfor %}
+
+{%endblock %}
